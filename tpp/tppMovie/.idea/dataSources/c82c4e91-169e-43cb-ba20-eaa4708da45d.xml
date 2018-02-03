@@ -1,0 +1,557 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="tpp0202@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.4">
+    <root id="1"/>
+    <schema id="2" parent="1" name="tpp0202">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="3" parent="1" name="axf"/>
+    <schema id="4" parent="1" name="axf1"/>
+    <schema id="5" parent="1" name="axf_t"/>
+    <schema id="6" parent="1" name="date_0102"/>
+    <schema id="7" parent="1" name="django0103"/>
+    <schema id="8" parent="1" name="django0104"/>
+    <schema id="9" parent="1" name="django0105"/>
+    <schema id="10" parent="1" name="django0107"/>
+    <schema id="11" parent="1" name="flask0118"/>
+    <schema id="12" parent="1" name="flask0120"/>
+    <schema id="13" parent="1" name="flask0122a"/>
+    <schema id="14" parent="1" name="homework0107"/>
+    <schema id="15" parent="1" name="information_schema"/>
+    <schema id="16" parent="1" name="mysql"/>
+    <schema id="17" parent="1" name="performance_schema"/>
+    <schema id="18" parent="1" name="project0111"/>
+    <schema id="19" parent="1" name="sys"/>
+    <schema id="20" parent="1" name="tpp"/>
+    <schema id="21" parent="1" name="tpp0131"/>
+    <schema id="22" parent="1" name="tpp0201"/>
+    <table id="23" parent="2" name="alembic_version"/>
+    <table id="24" parent="2" name="cinemas"/>
+    <table id="25" parent="2" name="halls"/>
+    <table id="26" parent="2" name="hallschedulings"/>
+    <table id="27" parent="2" name="movies"/>
+    <table id="28" parent="2" name="orders"/>
+    <table id="29" parent="2" name="seats"/>
+    <table id="30" parent="2" name="seatschedulings"/>
+    <column id="31" parent="23" name="version_num">
+      <Position>1</Position>
+      <DataType>varchar(32)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="32" parent="23" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>version_num</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="33" parent="24" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="34" parent="24" name="name">
+      <Position>2</Position>
+      <DataType>varchar(32)|0</DataType>
+    </column>
+    <column id="35" parent="24" name="city">
+      <Position>3</Position>
+      <DataType>varchar(32)|0</DataType>
+    </column>
+    <column id="36" parent="24" name="district">
+      <Position>4</Position>
+      <DataType>varchar(32)|0</DataType>
+    </column>
+    <column id="37" parent="24" name="address">
+      <Position>5</Position>
+      <DataType>varchar(256)|0</DataType>
+    </column>
+    <column id="38" parent="24" name="phone">
+      <Position>6</Position>
+      <DataType>varchar(32)|0</DataType>
+    </column>
+    <column id="39" parent="24" name="score">
+      <Position>7</Position>
+      <DataType>float|0</DataType>
+    </column>
+    <column id="40" parent="24" name="hallnum">
+      <Position>8</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="41" parent="24" name="servicecharge">
+      <Position>9</Position>
+      <DataType>float|0</DataType>
+    </column>
+    <column id="42" parent="24" name="astrict">
+      <Position>10</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="43" parent="24" name="flag">
+      <Position>11</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="44" parent="24" name="isDelete">
+      <Position>12</Position>
+      <DataType>tinyint(1)|0</DataType>
+    </column>
+    <key id="45" parent="24" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="46" parent="25" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="47" parent="25" name="cinemaID">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="48" parent="25" name="name">
+      <Position>3</Position>
+      <DataType>varchar(32)|0</DataType>
+    </column>
+    <column id="49" parent="25" name="screenType">
+      <Position>4</Position>
+      <DataType>varchar(16)|0</DataType>
+    </column>
+    <column id="50" parent="25" name="soundType">
+      <Position>5</Position>
+      <DataType>varchar(16)|0</DataType>
+    </column>
+    <column id="51" parent="25" name="seatNum">
+      <Position>6</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="52" parent="25" name="flag">
+      <Position>7</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="53" parent="25" name="isDelete">
+      <Position>8</Position>
+      <DataType>tinyint(1)|0</DataType>
+    </column>
+    <index id="54" parent="25" name="cinemaID">
+      <ColNames>cinemaID</ColNames>
+    </index>
+    <key id="55" parent="25" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="56" parent="25" name="halls_ibfk_1">
+      <ColNames>cinemaID</ColNames>
+      <RefSchemaName>tpp0202</RefSchemaName>
+      <RefTableName>cinemas</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="57" parent="26" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="58" parent="26" name="movieID">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="59" parent="26" name="cinemaID">
+      <Position>3</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="60" parent="26" name="hallID">
+      <Position>4</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="61" parent="26" name="pressType">
+      <Position>5</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="62" parent="26" name="originalPrice">
+      <Position>6</Position>
+      <DataType>float|0</DataType>
+    </column>
+    <column id="63" parent="26" name="price">
+      <Position>7</Position>
+      <DataType>float|0</DataType>
+    </column>
+    <column id="64" parent="26" name="startTime">
+      <Position>8</Position>
+      <DataType>time|0</DataType>
+    </column>
+    <column id="65" parent="26" name="duration">
+      <Position>9</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="66" parent="26" name="createTime">
+      <Position>10</Position>
+      <DataType>timestamp|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
+    </column>
+    <column id="67" parent="26" name="lastTime">
+      <Position>11</Position>
+      <DataType>time|0</DataType>
+    </column>
+    <column id="68" parent="26" name="flag">
+      <Position>12</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="69" parent="26" name="isDelete">
+      <Position>13</Position>
+      <DataType>tinyint(1)|0</DataType>
+    </column>
+    <index id="70" parent="26" name="cinemaID">
+      <ColNames>cinemaID</ColNames>
+    </index>
+    <index id="71" parent="26" name="hallID">
+      <ColNames>hallID</ColNames>
+    </index>
+    <index id="72" parent="26" name="movieID">
+      <ColNames>movieID</ColNames>
+    </index>
+    <key id="73" parent="26" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="74" parent="26" name="hallschedulings_ibfk_3">
+      <ColNames>movieID</ColNames>
+      <RefSchemaName>tpp0202</RefSchemaName>
+      <RefTableName>movies</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="75" parent="26" name="hallschedulings_ibfk_1">
+      <ColNames>cinemaID</ColNames>
+      <RefSchemaName>tpp0202</RefSchemaName>
+      <RefTableName>cinemas</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="76" parent="26" name="hallschedulings_ibfk_2">
+      <ColNames>hallID</ColNames>
+      <RefSchemaName>tpp0202</RefSchemaName>
+      <RefTableName>halls</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="77" parent="27" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="78" parent="27" name="showName">
+      <Position>2</Position>
+      <DataType>varchar(64)|0</DataType>
+    </column>
+    <column id="79" parent="27" name="showNameEN">
+      <Position>3</Position>
+      <DataType>varchar(64)|0</DataType>
+    </column>
+    <column id="80" parent="27" name="director">
+      <Position>4</Position>
+      <DataType>varchar(32)|0</DataType>
+    </column>
+    <column id="81" parent="27" name="leadingRole">
+      <Position>5</Position>
+      <DataType>varchar(256)|0</DataType>
+    </column>
+    <column id="82" parent="27" name="type">
+      <Position>6</Position>
+      <DataType>varchar(64)|0</DataType>
+    </column>
+    <column id="83" parent="27" name="country">
+      <Position>7</Position>
+      <DataType>varchar(32)|0</DataType>
+    </column>
+    <column id="84" parent="27" name="language">
+      <Position>8</Position>
+      <DataType>varchar(32)|0</DataType>
+    </column>
+    <column id="85" parent="27" name="duration">
+      <Position>9</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="86" parent="27" name="screeningModel">
+      <Position>10</Position>
+      <DataType>varchar(16)|0</DataType>
+    </column>
+    <column id="87" parent="27" name="openDay">
+      <Position>11</Position>
+      <DataType>date|0</DataType>
+    </column>
+    <column id="88" parent="27" name="backgroundPicture">
+      <Position>12</Position>
+      <DataType>varchar(256)|0</DataType>
+    </column>
+    <column id="89" parent="27" name="flag">
+      <Position>13</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="90" parent="27" name="isDelete">
+      <Position>14</Position>
+      <DataType>tinyint(1)|0</DataType>
+    </column>
+    <key id="91" parent="27" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="92" parent="28" name="orderID">
+      <Position>1</Position>
+      <DataType>varchar(128)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="93" parent="28" name="movieID">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="94" parent="28" name="cinemaID">
+      <Position>3</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="95" parent="28" name="hallID">
+      <Position>4</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="96" parent="28" name="hsID">
+      <Position>5</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="97" parent="28" name="seatIDStr">
+      <Position>6</Position>
+      <DataType>varchar(128)|0</DataType>
+    </column>
+    <column id="98" parent="28" name="ssIDStr">
+      <Position>7</Position>
+      <DataType>varchar(128)|0</DataType>
+    </column>
+    <column id="99" parent="28" name="qupiaoStr">
+      <Position>8</Position>
+      <DataType>varchar(32)|0</DataType>
+    </column>
+    <column id="100" parent="28" name="piaoNum">
+      <Position>9</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="101" parent="28" name="piaoPrice">
+      <Position>10</Position>
+      <DataType>float|0</DataType>
+    </column>
+    <column id="102" parent="28" name="createTime">
+      <Position>11</Position>
+      <DataType>timestamp|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
+    </column>
+    <column id="103" parent="28" name="payTime">
+      <Position>12</Position>
+      <DataType>time|0</DataType>
+    </column>
+    <column id="104" parent="28" name="getTime">
+      <Position>13</Position>
+      <DataType>time|0</DataType>
+    </column>
+    <column id="105" parent="28" name="tuikuanTime">
+      <Position>14</Position>
+      <DataType>time|0</DataType>
+    </column>
+    <column id="106" parent="28" name="lastTime">
+      <Position>15</Position>
+      <DataType>time|0</DataType>
+    </column>
+    <column id="107" parent="28" name="flag">
+      <Position>16</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="108" parent="28" name="isDelete">
+      <Position>17</Position>
+      <DataType>tinyint(1)|0</DataType>
+    </column>
+    <index id="109" parent="28" name="cinemaID">
+      <ColNames>cinemaID</ColNames>
+    </index>
+    <index id="110" parent="28" name="hallID">
+      <ColNames>hallID</ColNames>
+    </index>
+    <index id="111" parent="28" name="hsID">
+      <ColNames>hsID</ColNames>
+    </index>
+    <index id="112" parent="28" name="movieID">
+      <ColNames>movieID</ColNames>
+    </index>
+    <key id="113" parent="28" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>orderID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="114" parent="28" name="orders_ibfk_4">
+      <ColNames>movieID</ColNames>
+      <RefSchemaName>tpp0202</RefSchemaName>
+      <RefTableName>movies</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="115" parent="28" name="orders_ibfk_1">
+      <ColNames>cinemaID</ColNames>
+      <RefSchemaName>tpp0202</RefSchemaName>
+      <RefTableName>cinemas</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="116" parent="28" name="orders_ibfk_2">
+      <ColNames>hallID</ColNames>
+      <RefSchemaName>tpp0202</RefSchemaName>
+      <RefTableName>halls</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="117" parent="28" name="orders_ibfk_3">
+      <ColNames>hsID</ColNames>
+      <RefSchemaName>tpp0202</RefSchemaName>
+      <RefTableName>hallschedulings</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="118" parent="29" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="119" parent="29" name="cinemaID">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="120" parent="29" name="hallID">
+      <Position>3</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="121" parent="29" name="seatType">
+      <Position>4</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="122" parent="29" name="x">
+      <Position>5</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="123" parent="29" name="y">
+      <Position>6</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="124" parent="29" name="isAllowSell">
+      <Position>7</Position>
+      <DataType>tinyint(1)|0</DataType>
+    </column>
+    <column id="125" parent="29" name="flag">
+      <Position>8</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="126" parent="29" name="isDelete">
+      <Position>9</Position>
+      <DataType>tinyint(1)|0</DataType>
+    </column>
+    <index id="127" parent="29" name="cinemaID">
+      <ColNames>cinemaID</ColNames>
+    </index>
+    <index id="128" parent="29" name="hallID">
+      <ColNames>hallID</ColNames>
+    </index>
+    <key id="129" parent="29" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="130" parent="29" name="seats_ibfk_1">
+      <ColNames>cinemaID</ColNames>
+      <RefSchemaName>tpp0202</RefSchemaName>
+      <RefTableName>cinemas</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="131" parent="29" name="seats_ibfk_2">
+      <ColNames>hallID</ColNames>
+      <RefSchemaName>tpp0202</RefSchemaName>
+      <RefTableName>halls</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="132" parent="30" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="133" parent="30" name="cinemaID">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="134" parent="30" name="hallID">
+      <Position>3</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="135" parent="30" name="seatID">
+      <Position>4</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="136" parent="30" name="hsID">
+      <Position>5</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="137" parent="30" name="orderID">
+      <Position>6</Position>
+      <DataType>varchar(128)|0</DataType>
+    </column>
+    <column id="138" parent="30" name="createTime">
+      <Position>7</Position>
+      <DataType>timestamp|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
+    </column>
+    <index id="139" parent="30" name="cinemaID">
+      <ColNames>cinemaID</ColNames>
+    </index>
+    <index id="140" parent="30" name="hallID">
+      <ColNames>hallID</ColNames>
+    </index>
+    <index id="141" parent="30" name="hsID">
+      <ColNames>hsID</ColNames>
+    </index>
+    <index id="142" parent="30" name="orderID">
+      <ColNames>orderID</ColNames>
+    </index>
+    <index id="143" parent="30" name="seatID">
+      <ColNames>seatID</ColNames>
+    </index>
+    <key id="144" parent="30" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="145" parent="30" name="seatschedulings_ibfk_1">
+      <ColNames>cinemaID</ColNames>
+      <RefSchemaName>tpp0202</RefSchemaName>
+      <RefTableName>cinemas</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="146" parent="30" name="seatschedulings_ibfk_2">
+      <ColNames>hallID</ColNames>
+      <RefSchemaName>tpp0202</RefSchemaName>
+      <RefTableName>halls</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="147" parent="30" name="seatschedulings_ibfk_5">
+      <ColNames>seatID</ColNames>
+      <RefSchemaName>tpp0202</RefSchemaName>
+      <RefTableName>seats</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="148" parent="30" name="seatschedulings_ibfk_3">
+      <ColNames>hsID</ColNames>
+      <RefSchemaName>tpp0202</RefSchemaName>
+      <RefTableName>hallschedulings</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="149" parent="30" name="seatschedulings_ibfk_4">
+      <ColNames>orderID</ColNames>
+      <RefSchemaName>tpp0202</RefSchemaName>
+      <RefTableName>orders</RefTableName>
+      <RefColNames>orderID</RefColNames>
+    </foreign-key>
+  </database-model>
+</dataSource>

@@ -1,0 +1,10 @@
+1、启动黑屏终端
+2、cd到工程目录下
+3、virtualenv  env    
+(创建工程是执行，以后进入工程就不用执行了)
+4、source  env/bin/active
+使用env下的虚拟环境
+5、pip  install  -r  requirements.txt
+(有包的更新才需要执行)
+
+manage.py runserver -d -r -p 8000 -h 0.0.0.0 --threaded
